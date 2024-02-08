@@ -125,7 +125,6 @@ class _SignUpState extends State<SignUp> {
                                           emailController.text)) {
                                         return "Enter a valid email";
                                       }
-                                      return "";
                                     }),
                               )
                             ],
@@ -160,7 +159,6 @@ class _SignUpState extends State<SignUp> {
                                     if (value!.length < 6) {
                                       return "Password must be atlest 6 characters";
                                     }
-                                    return "";
                                   },
                                   controller: passController,
                                   obscureText: true,
@@ -201,12 +199,13 @@ class _SignUpState extends State<SignUp> {
                               Expanded(
                                 child: TextFormField(
                                   validator: (value) {
+                                    print("Hello");
+
                                     if (value != passController.text) {
                                       return "Confirm password must be same as Password";
                                     } else if (value!.length < 6) {
                                       return "Password must be atlest 6 characters";
                                     }
-                                    return "";
                                   },
                                   controller: confirmPassController,
                                   obscureText: true,
@@ -281,9 +280,7 @@ class _SignUpState extends State<SignUp> {
                     "Already Have an Account?",
                     style: TextStyle(fontSize: 14),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, "/login");

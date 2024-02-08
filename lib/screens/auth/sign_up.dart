@@ -199,8 +199,6 @@ class _SignUpState extends State<SignUp> {
                               Expanded(
                                 child: TextFormField(
                                   validator: (value) {
-                                    print("Hello");
-
                                     if (value != passController.text) {
                                       return "Confirm password must be same as Password";
                                     } else if (value!.length < 6) {
